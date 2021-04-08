@@ -1,0 +1,50 @@
+
+<DCOTYPE html>
+ <html>
+  
+  <body>
+   <h1>YOUR DATA  </h1>
+   <br>
+   <script>
+    var members = prompt("enter how many members");
+    var amount = prompt("enter total chit amount");
+    var percentail = prompt("Enter Organizer percentage");
+    var permonth;
+    var months= prompt("Enter no of moths completed");
+    permonth = amount/members;
+   
+    var orincome=(percentail/100)*amount;
+    var chit_pata = new Array(100);
+    for(var i=1;i <= months;i++)
+    {
+     chit_pata[i]=prompt("Enter chit_pata  in "+i+"th month");
+    }
+    var chitpay = new Array(100);
+    var profit = new Array(100);
+    var totalprofit=0;
+    var cumulativepaid=0;
+    for(var j=1;j <= months;j++)
+    {
+     chitpay[j]=(amount-(chit_pata[j]-orincome))/members;
+     profit[j]=(amount/members)-chitpay[j];
+     totalprofit=totalprofit+profit[j];
+     cumulativepaid=cumulativepaid+chitpay[j];
+     document.write("MONTH :"+j);
+     document.write("</br>");
+     document.write("chit_pata on "+j+"th month :"+ chit_pata[j]);
+     document.write("</br>");
+     document.write("chitpay on "+j+"th month is : " + chitpay[j]);
+     document.write("</br>");
+     document.write("profit of "+j+"th month: " + profit[j]);
+     document.write("</br>");
+     document.write("cumulative profit:" +totalprofit);
+     document.write("</br>");
+     document.write("Cumulative paid:"+cumulativepaid);
+     document.write("</br>");
+     document.write("</br>");
+    }
+    
+   </script>
+   
+  </body>
+ </html>
